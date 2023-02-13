@@ -160,7 +160,7 @@ Proxmox VE создает образ ISO для передачи данных Cl
 apt-get install cloud-init
 ```
 
-!!! Эта команда не предназначена для выполнения на хосте Proxmox VE, а только внутри виртуальной машины.
+**:warning: Эта команда не предназначена для выполнения на хосте Proxmox VE, а только внутри виртуальной машины.**
 
 Многие дистрибутивы уже предоставляют готовые к использованию образы Cloud-Init (предоставленные в виде файлов .qcow2), поэтому в качестве альтернативы вы можете просто загрузить и импортировать такие образы. В следующем примере мы будем использовать облачный образ, предоставленный Ubuntu по адресу https://cloud-images.ubuntu.com.
 
@@ -175,7 +175,7 @@ qm create 9000 --memory 2048 --net0 virtio,bridge=vmbr0 --scsihw virtio-scsi-pci
 qm set 9000 --scsi0 local-lvm:0,import-from=/path/to/bionic-server-cloudimg-amd64.img
 ```
 
-!!! Для образов Ubuntu Cloud-Init требуется тип контроллера virtio-scsi-pci для дисков SCSI.
+**:warning: Для образов Ubuntu Cloud-Init требуется тип контроллера virtio-scsi-pci для дисков SCSI.**
 
 Добавьте дисковод компакт-дисков Cloud-Init.
 
